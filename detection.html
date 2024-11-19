@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISL Detection System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="hand-sign">🤟</div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content hidden">
+        <nav class="navbar">
+            <div class="logo">ISL Detector</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="detection.html" class="active">Try It Now</a>
+            </div>
+        </nav>
+
+        <header class="detection-hero">
+            <div class="hero-content">
+                <h1>ISL Detection System</h1>
+                <p>Real-time sign language recognition using AI</p>
+            </div>
+        </header>
+
+        <main class="detection-main">
+            <div class="container detection-container">
+                <div class="header">
+                    <h2>Indian Sign Language Classifier</h2>
+                    <p class="status">Choose a detection method</p>
+                </div>
+                
+                <div class="detection-controls">
+                    <div class="button-group">
+                        <button class="button primary-button" id="webcamButton" onclick="toggleWebcam()">
+                            <i class="fas fa-camera"></i> Use Webcam
+                        </button>
+                        <button class="button danger-button" id="stopButton" onclick="stopWebcam()">
+                            <i class="fas fa-stop"></i> Stop Camera
+                        </button>
+                        <label class="upload-label">
+                            <i class="fas fa-upload"></i> Upload Image
+                            <input type="file" class="file-input" accept="image/*" onchange="handleImageUpload(event)">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="detection-view">
+                    <div id="webcam-container" class="webcam-container"></div>
+                    <div id="preview-container" class="preview-container">
+                        <img id="preview-image" src="" alt="Preview">
+                    </div>
+                    <div id="result-container" class="result-container"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Created With Love ❤️ | &copy; 2024</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="detection.html">Try It Now</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
